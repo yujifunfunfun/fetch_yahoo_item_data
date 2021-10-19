@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>pos</title>
+</head>
+<body class="px-3 pt-3">
+    <style>
+        .textarea{
+            display:inline-block;
+        }    
+        </style>
+    <h3 class="mb-3">Yahoo</h3>
+
+    <div class='mt-4 textarea'>
+        <p class="mb-0">商品名入力欄</p>
+        <textarea id="item_name" cols="0" rows="7"></textarea>
+        <br>
+        <button id="item_name_search" class="bg-primary text-white border-primary rounded-pill">実行</button>
+    </div>
+    <div class='mt-4 ml-4 textarea'>
+        <p class="mb-0">セラーID入力欄</p>
+        <textarea id="seller_id" cols="0" rows="7"></textarea>
+        <br>
+        <button id="seller_id_search" class="bg-primary text-white border-primary rounded-pill">実行</button>
+    </div>
+    <div class='mt-4'>
+        <p class="mb-0">処理状況確認欄</p>
+        <textarea id="result" cols="0" rows="7"></textarea>
+    </div>
+
+
+
+    <script type="text/javascript" src="./eel.js"></script>
+    <script>
+    
+        item_name_search.addEventListener('click', () => {
+            eel.main(item_name.value)
+        })
+        seller_id_search.addEventListener('click', () => {
+            eel.main2(seller_id.value)
+        })
+
+
+        eel.expose(view_log_js)
+        function view_log_js(text){
+            result.value += text + '\n'
+        }
+
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
